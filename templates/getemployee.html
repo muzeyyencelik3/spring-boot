@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Employee</title>
+    <style>
+        label {
+            display: block;
+            float: left;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/getemp}"  method="get">
+    <label for="no">EmpNo</label>
+    <input type="text" th:name="no" no="no" placeholder="No">
+    <br> <br>
+
+    <input type="submit" value="Get Employee">
+
+</form>
+</body>
+</html>

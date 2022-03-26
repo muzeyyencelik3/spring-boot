@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Employee</title>
+    <style>
+        label {
+            display: block;
+             float: left;
+            width: 100px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/add}" th:object="${employee}" method="post">
+    <label for="no">EMPNO:</label>
+    <input type="text" th:field="*{no}" no="no" placeholder="No">
+    <br> <br>
+
+    <label for="EName">ENAME:</label>
+    <input type="text" th:field="*{EName}" EName="EName" placeholder="EName">
+    <br> <br>
+
+    <label for="job">JOB:</label>
+    <input type="text" th:field="*{job}" job="job" placeholder="Job">
+    <br> <br>
+
+    <label for="mgr">MGR:</label>
+    <input type="text" th:field="*{mgr}" mgr="mgr" placeholder="Mgr">
+    <br> <br>
+
+    <label for="hireDate">HIREDATE:</label>
+    <input type="text" th:field="*{hireDate}" hireDate="hireDate" placeholder="HireDate">
+    <br> <br>
+
+    <label for="sal">SAL:</label>
+    <input type="text" th:field="*{sal}" sal="sal" placeholder="sal">
+    <br> <br>
+
+    <label for="comm">COMM:</label>
+    <input type="text" th:field="*{comm}" comm="comm" placeholder="comm">
+    <br> <br>
+
+    <label for="deptNo">DEPTNO:</label>
+    <input type="text" th:field="*{deptNo}" deptNo="deptNo" placeholder="DeptNo">
+    <br> <br>
+
+    <br>
+    <input type="submit" value="Add Employee">
+
+</form>
+</body>
+</html>

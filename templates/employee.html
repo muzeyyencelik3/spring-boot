@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1>Employees </h1>
+<table>
+    <thead>
+    <tr>
+        <th>EMPNO</th>
+        <th>ENAME</th>
+        <th>JOB</th>
+        <th>MGR</th>
+        <th>HIREDATE</th>
+        <th>SAL</th>
+        <th>COMM</th>
+        <th>DEPTNO</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--/*@thymesVar id="Employee" type="ch"*/-->
+    <tr th:object="${employee}">
+        <td th:text="*{no}"></td>
+        <td th:text="*{EName}"></td>
+        <td th:text="*{job}"></td>
+        <td th:text="*{mgr}"></td>
+        <td th:text="*{hireDate}"></td>
+        <td th:text="*{sal}"></td>
+        <td th:text="*{comm}"></td>
+        <td th:text="*{deptNo}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

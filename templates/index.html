@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+
+
+    <style>
+         {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+         td, th {
+            border: 1px solid #ddd;
+            padding: 11px;
+
+        }
+
+         tr {
+             background-color: #f2f2f2;
+         }
+
+         tr:hover {
+            background-color: #2ecc71;
+            color:#fff;
+        }
+
+         th {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: left;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+<h1>Employees </h1>
+<p><a th:href="@{/addemployee}">Add Employee</a></p>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>EMPNO</th>
+        <th>ENAME</th>
+        <th>JOB</th>
+        <th>MGR</th>
+        <th>HIREDATE</th>
+        <th>SAL</th>
+        <th>COMM</th>
+        <th>DEPTNO</th>
+        <th colspan="2">OPERATIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${eList}">
+        <td th:text="${employee.no}"></td>
+        <td th:text="${employee.EName}"></td>
+        <td th:text="${employee.job}"></td>
+        <td th:text="${employee.mgr}"></td>
+        <td th:text="${employee.hireDate}"></td>
+        <td th:text="${employee.sal}"></td>
+        <td th:text="${employee.comm}"></td>
+        <td th:text="${employee.deptNo}"></td>
+        <td><a th:href="@{/update/{no}(no=${employee.no})}">Update</a></td>
+        <td><a th:href="@{/delete/{no}(no=${employee.no})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
